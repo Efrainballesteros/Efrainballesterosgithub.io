@@ -30,8 +30,17 @@ class AbstractVisualizer {
     context.fill();
   }
 
-  drawSquare() {
-    // TODO(week 3): Implement.
+  drawSquare(point1, point2, point3, point4 = {}) {
+    const context = this.canvas.getContext("2d")
+    context.lineWidth = squareProperties.width || 5;
+    context.strokeStyle = squareProperties.colr ||"#FF00000"
+    context. moveTo(point1.x, point1.y);
+    context.lineTo(point2.x, point2.y);
+    context. lineTo(point3.x, point3.y);
+    context. lineTo(point4.x, point4.y);
+    context. lineTo(point1.x, point1.y)
+    context. closepath();
+    context fill();
   }
 
   drawCircle() {
