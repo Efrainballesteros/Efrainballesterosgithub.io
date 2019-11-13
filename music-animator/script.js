@@ -19,15 +19,17 @@ class MyVisualizer extends AbstractVisualizer {
     updateVisual(peakIndex) {
       const audioEl = document.querySelector('#audio');
 
-      // If we pass an index greater than the # peaks,
+      audioEl.currentTime
+      this.peaks
       if (peakIndex >= this.peaks.length) {
           return;
       }
 
       // TODO(you): "If"-statement here.
-      // 1) Inspect the audioEl for time-related properties.
-      // 2) Access the peak at peakIndex from the peaks array.
-      // 3) Compare the time properties to peak properties (part 1 and 2 above):
+      generateRandomPoint(100,120)
+      generateRandomValue(100, 120)
+      generateRandomColor()
+      generateRandomColor()
       //    -- If the audio's current time is greater or equal to the time of
       //    the peak, draw visualizations (drawShapes).
       if (true)
@@ -86,9 +88,10 @@ document.getElementById('playButton').addEventListener('click', (clickEvent) => 
 
           requestAudio(previewUrl, (audio) => {
             // TODO(you): Use analyzeAudio to apply frequency analysis.
-
+            let analyzedAudio = analyzedAudio(audio)
             // TODO(you): Create an instance of MyVisualizer using the
             // analyzed audio.
+            let visualizer = new Myvisualer(analyzedAudio);
 
             audioEl.play();
 

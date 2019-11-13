@@ -26,21 +26,25 @@ class AbstractVisualizer {
     context.lineTo(point3.x, point3.y);
     context.lineTo(point4.x, point4.y);
     context.lineTo(point1.x, point1.y);
-    context.closePath();
     context.fill();
+    context.strokeStyle = rectangleProperties.color;
+    contesxt.stroke();
   }
 
-  drawSquare(point1, point2, point3, point4 = {}) {
-    const context = this.canvas.getContext("2d")
-    context.lineWidth = squareProperties.width || 5;
-    context.strokeStyle = squareProperties.colr ||"#FF00000"
-    context. moveTo(point1.x, point1.y);
-    context.lineTo(point2.x, point2.y);
-    context. lineTo(point3.x, point3.y);
-    context. lineTo(point4.x, point4.y);
-    context. lineTo(point1.x, point1.y)
-    context. closepath();
-    context fill();
+  drawSquare(point1,sidelength,squarePropeties) = {}) {
+    const context = this.canvas.getContext("2d");
+    contest.lineWidth = squarePropeties.width || 5;
+    context.strokeStyle = squarePropeties.color || '#FF00000';
+
+    context.moveTo(point1.x, point1.y);
+    context.lineTo(point1.x + sidelength, point1.y);
+    context.lineTo(point1.x + sidelength, point1.y);
+    context.lineTo(point1.x + sidelength, point1.y + sidelength);
+    context.lineTo(point1.x, point1.y + sidelength);
+
+    context.fill();
+    context.strokeStyle = squarePropeties. color;
+    context.stroke();
   }
 
   drawCircle() {
@@ -75,14 +79,19 @@ function generateRandomValue(minValue = 1, maxValue = 10) {
   max = Math.floor(maxValue);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 function generateRandomPoint() {
-  // TODO:
-  // Use generateRandomValue to create a ranom x and a random y value.
-  // HINT: we can use the constants CANVAS_HEIGHT and CANVAS_WIDTH for the max
-  //     x and y values.
-  return {
-    x: 0,
-    y: 0,
+
+    return {
+    x:
+    generateRandomValue(0,CANVAS_WIDTH),
+    y:
+    generateRandomValue(0,CANVAS_HEIGHT)
   };
 }
+
+
+ drawShapes();
+
+ drawSquare()
+
+ drawSquare()
